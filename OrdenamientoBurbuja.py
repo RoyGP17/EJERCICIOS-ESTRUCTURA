@@ -1,28 +1,11 @@
-"""
-    https://parzibyte.me/blog
-"""
+def ordenar_pacientes():
+    pacientes = [{'nombre': 'Juan', 'gravedad': 3},
+                 {'nombre': 'Maria', 'gravedad': 1},
+                 {'nombre': 'Pedro', 'gravedad': 2}]
+    for i in range(len(pacientes)-1,0,-1):
+        for j in range(i):
+            if pacientes[j]['gravedad'] > pacientes[j+1]['gravedad']:
+                pacientes[j], pacientes[j+1] = pacientes[j+1], pacientes[j]
+    print(pacientes)
 
-
-def burbuja(arreglo):
-    # Calculamos la longitud del arreglo para tener un código más limpio
-    longitud = len(arreglo)
-    # Recorremos todo el arreglo
-    for i in range(longitud):
-        # Dentro del ciclo, volvemos a recorrerlo. Pero ahora hasta el penúltimo elemento
-        for indice_actual in range(longitud - 1):
-            indice_siguiente_elemento = indice_actual + 1
-            # Si el actual es mayor que el siguiente, ...
-            # Nota: para un orden inverso, cambia `>` por `<`
-            if arreglo[indice_actual] > arreglo[indice_siguiente_elemento]:
-                # ... intercambiamos los elementos
-                arreglo[indice_siguiente_elemento], arreglo[indice_actual] = arreglo[indice_actual], arreglo[indice_siguiente_elemento]
-    # No hace falta regresar nada, pues el arreglo ya fue modificado
-
-
-# Modo de uso.
-mi_arreglo = [3, 4, 1, 2, 3, 7, 55, 34, 43, 3]
-print("Original: ")
-print(mi_arreglo)
-burbuja(mi_arreglo)
-print("Ordenado: ")
-print(mi_arreglo) 
+ordenar_pacientes()
