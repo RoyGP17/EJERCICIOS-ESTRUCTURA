@@ -25,3 +25,4 @@ def brechaOrdenamientoPorInsercion(unaLista,inicio,brecha):
 unaLista = [54,26,93,17,77,31,44,55,20]
 ordenamientoDeShell(unaLista)
 print(unaLista)
+
