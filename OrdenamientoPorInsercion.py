@@ -1,15 +1,13 @@
-def ordenamientoPorInsercion(unaLista):
-   for indice in range(1,len(unaLista)):
+def Ordenamiento_insersion(lista):
+    for i in range(1, len(lista)):
+        actual = lista[i]
+        j = i-1
+        while j >= 0 and actual < lista[j]:
+            lista[j+1] = lista[j]
+            j -= 1
+        lista[j+1] = actual
+    return lista
 
-     valorActual = unaLista[indice]
-     posicion = indice
-
-     while posicion>0 and unaLista[posicion-1]>valorActual:
-         unaLista[posicion]=unaLista[posicion-1]
-         posicion = posicion-1
-
-     unaLista[posicion]=valorActual
-
-unaLista = [54,26,93,17,77,31,44,55,20]
-ordenamientoPorInsercion(unaLista)
-print(unaLista)
+lista = [6, 5, 10, 3, 4, 9, 8]
+Ordenamiento_insersion(lista)
+print(lista)
