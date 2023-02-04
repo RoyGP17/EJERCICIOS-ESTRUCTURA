@@ -1,35 +1,26 @@
-def OrdenamientoPorMezcla(lista):
-    if len(lista) > 1:
-        mid = len(lista)//2
-        izquierda = lista[:mid]
-        derecha = lista[mid:]
+def merge_sort(lista):
+    if len(lista) <= 1:
+        return lista
 
-        OrdenamientoPorMezcla(izquierda)
-        OrdenamientoPorMezcla(derecha)
+    mitad = len(lista) // 2
+    izquierda = lista[:mitad]
+    derecha = lista[mitad:]
 
-        i = j = k = 0
+    izquierda = merge_sort(izquierda)
+    derecha = merge_sort(derecha)
 
-        while i < len(izquierda) and j < len(derecha):
-            if izquierda[i] < derecha[j]:
-                lista[k] = izquierda[i]
-                i += 1
-            else:
-                lista[k] = derecha[j]
-                j += 1
-            k += 1
+    resultado = []
+    i, j = 0, 0
 
-        while i < len(izquierda):
-            lista[k] = izquierda[i]
+    while i < len(izquierda) and j < len(derecha):
+        if izquierda[i] < derecha[j]:
+            resultado.append(izquierda[i])
             i += 1
-            k += 1
-
-        while j < len(derecha):
-            lista[k] = derecha[j]
+        else:
+            resultado.append(derecha[j])
             j += 1
-            k += 1
 
-    return lista
+    resultado += izquierda[i:]
+    resultado += derecha[j:]
 
-list = [14, 25, 30, 12, 7, 2, 41, 62, 54, 23, 11, 0, -2, 33, 28, 6]
-OrdenamientoPorMezcla(list)
-print(list)
+    return resultado
