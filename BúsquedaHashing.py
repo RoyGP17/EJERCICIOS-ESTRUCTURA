@@ -1,4 +1,6 @@
 
+
+
 class hashTabla():
     def __int__(self):
         self.tabla = [None]*127  # <---- El tamaño de mi tabla
