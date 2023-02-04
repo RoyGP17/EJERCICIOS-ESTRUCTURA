@@ -1,17 +1,13 @@
-list = [4,2,3,1,7,5]
+def Ordenamiento_Por_Seleccion(list):
 
-def Ordenamiento_Por_Seleccion(lista):
-    n = len(lista)
-    for i in range(n):
-        min_idx = i
-        for j in range(i+1, n):
-            if lista[j] < lista[min_idx]:
+    for i in range(len(list)-1,0,-1):
+        min_idx = 0
+        for j in range(1, i+1):
+            if list[j] > list[min_idx]:
                 min_idx = j
-        lista[i], lista[min_idx] = lista[min_idx], lista[i]
-    return lista
+        list[i], list[min_idx] = list[min_idx], list[i]
+    return list
 
-Ordenamiento_Por_Seleccion(list)
-print(list)
-
-
-
+lista = [4,2,3,1,7,5]
+Ordenamiento_Por_Seleccion(lista)
+print(lista)
