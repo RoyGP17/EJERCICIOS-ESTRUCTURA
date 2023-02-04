@@ -4,3 +4,5 @@ def hash(unaCadena, tamanoTabla):
         suma = suma + ord(unaCadena[pos])
 
     return suma%tamanoTabla
+
+print("Hola")
